@@ -10,8 +10,8 @@ public abstract class Fighter : MonoBehaviour
     public TMP_Text mostrarVida;
     protected Stats stats;
 
-    protected Skills[] skills;
-    protected bool isAlive
+    public Skills[] skills;
+    public bool isAlive
     {
         get => this.stats.HealtNucleo > 0;
     }

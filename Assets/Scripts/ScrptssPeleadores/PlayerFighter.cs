@@ -22,6 +22,10 @@ public class PlayerFighter : Fighter
         this.skillPanel.Hide();
         Skills skills = this.skills[index];
 
-        Debug.Log($"Running {skills.NameSkills} Skill");
+        skills.SetEmitterAndReceiver(
+            this,this.combatManager.GetOpposingFighter());
+
+        this.combatManager.OnFighterSkill(skills);
+        //Debug.Log($"Running {skills.NameSkills} Skill");
     }
 }
