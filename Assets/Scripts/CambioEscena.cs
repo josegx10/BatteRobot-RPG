@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CambioEscena : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other){
 
