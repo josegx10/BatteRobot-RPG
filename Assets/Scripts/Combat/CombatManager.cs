@@ -25,7 +25,7 @@ public class CombatManager : MonoBehaviour
         {
             fgtr.combatManager = this;
         }
-        this.fightindex = 0;
+        this.fightindex = -1;
 
         this.combatstatus = CombatStatus.NEXT_TURN;
         this.iscombatActive = true;
@@ -42,6 +42,7 @@ public class CombatManager : MonoBehaviour
                     break;
                 case CombatStatus.FIGHTER_ACTION:
                     Debug.Log($"{this.fighters[this.fightindex].Name} uses {currentFighterSkill.NameSkills}.");
+                    
                     yield return null;
 
                     currentFighterSkill.Run();
@@ -65,12 +66,13 @@ public class CombatManager : MonoBehaviour
                     break;
                 case CombatStatus.NEXT_TURN:
                     yield return new WaitForSeconds(2f);
+                    this.fightindex = (this.fightindex + 1) % this.fighters.Length;
 
                     var CurrentTurn = this.fighters[fightindex];
 
                     Debug.Log($"{CurrentTurn.Name} has the turn.");
                     CurrentTurn.InitTurn();
-                    this.fightindex = (this.fightindex + 1) % this.fighters.Length;
+                    
                     this.combatstatus = CombatStatus.WAITING_FOR_FIGHTER;
                     break;
             }

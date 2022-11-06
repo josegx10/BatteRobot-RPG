@@ -17,12 +17,12 @@ public class HealthModSkill : Skills
 
     protected override void OnRun()
     {
+        
+        
+         this.amount = this.GetModification();
+         this.receiver.ModifyHealth(amount);
+
         if (ModeDefence == false)
-        {
-            this.amount = this.GetModification();
-            this.receiver.ModifyHealth(amount);
-        }
-        else
         {
             this.receiver.ModifyDefence(amount);
         }

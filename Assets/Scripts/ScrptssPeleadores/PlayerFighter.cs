@@ -4,6 +4,7 @@ public class PlayerFighter : Fighter
 {
     [Header("UI")]
     public PlayerSkillPanel skillPanel;
+
     void Awake()
     {
         this.stats = new Stats(25, 30, 100, 250);    

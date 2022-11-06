@@ -17,8 +17,8 @@ public abstract class Skills : MonoBehaviour
         if (this.SelfInflicted)
         {
             this.emitter = this.receiver;
-            this.OnRun();
         }
+        this.OnRun();
 
     }
 

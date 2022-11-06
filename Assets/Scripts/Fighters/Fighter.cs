@@ -10,22 +10,24 @@ public abstract class Fighter : MonoBehaviour
     public TMP_Text mostrarVida;
     protected Stats stats;
 
-    public Skills[] skills;
+    protected Skills[] skills;
     public bool isAlive
     {
         get => this.stats.HealtNucleo > 0;
     }
 
-
     protected virtual void Start()
     {
         mostrarVida.text =$"Health {Name}: "+ stats.HealtNucleo;
         this.skills = this.GetComponentsInChildren<Skills>();
+        
     }
+    
 
     public void ModifyHealth(float amont)
     {
         this.stats.HealtNucleo = Mathf.Clamp(this.stats.HealtNucleo+amont,0f,this.stats.MaxHealtNucleo);
+        this.stats.HealtNucleo = Mathf.Round(this.stats.HealtNucleo);
         mostrarVida.text = $"Health {Name}: " + stats.HealtNucleo;
     }
     public Stats GetCurrentStats()
