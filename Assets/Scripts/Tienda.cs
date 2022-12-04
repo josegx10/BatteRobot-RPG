@@ -11,5 +11,20 @@ public class Tienda : MonoBehaviour
         SceneManager.LoadScene("ejeplo");
     }
 
+    public void Misil()
+    {
+        Debug.Log("Misil");
+    }
+
+    public void Cuchillo()
+    {
+        Debug.Log("Cuchillo");
+    }
+
+    public void Lanzallamas()
+    {
+        Debug.Log("Lanzallamas");
+    }
+
 
 }
