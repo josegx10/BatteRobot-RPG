@@ -45,9 +45,31 @@ public class PlayerController : MonoBehaviour
         }
     }
     void PlayerMove(float mh, float mv){
-        displacement = transform.forward * mv + transform.right * mh;
-        displacement = displacement.normalized * playerSpeed * Time.deltaTime;
-        rb.MovePosition(transform.position + displacement);
+        //PlayerRotate(mh);
+        
+        if(mh < 0){
+            Debug.Log("Se movio al rigth");
+            transform.localEulerAngles = new Vector3(0,180,0);
+            displacement = transform.forward * mv + transform.right * mh;
+            displacement = displacement.normalized * playerSpeed * Time.deltaTime;
+            rb.MovePosition(transform.position - displacement);
+        }else if(0 < mh){
+            Debug.Log("Se movio al left");
+            transform.localEulerAngles = new Vector3(0,0,0);
+            displacement = transform.forward * mv + transform.right * mh;
+            displacement = displacement.normalized * playerSpeed * Time.deltaTime;
+            rb.MovePosition(transform.position + displacement);
+        }else if(mv < 0){
+            transform.localEulerAngles = new Vector3(0,0,0);
+            displacement = transform.forward * mv + transform.right * mh;
+            displacement = displacement.normalized * playerSpeed * Time.deltaTime;
+            rb.MovePosition(transform.position + displacement);
+        }else if(0 < mv){
+            transform.localEulerAngles = new Vector3(0,0,0);
+            displacement = transform.forward * mv + transform.right * mh;
+            displacement = displacement.normalized * playerSpeed * Time.deltaTime;
+            rb.MovePosition(transform.position + displacement);
+        }
         
     }
     void PlayerRotate(float mh){
