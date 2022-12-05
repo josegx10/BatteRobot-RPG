@@ -4,17 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class BotonesMenu : MonoBehaviour
+public class irTienda : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void NewGame()
+    public void atienda()
     {
-        SceneManager.LoadScene("ejeplo");
+        SceneManager.LoadScene("tienda");
     }
-
-    public void Continue()
+    public void ainicio()
     {
-        SceneManager.LoadScene("ejeplo");
+        SceneManager.LoadScene("inicio");
     }
-
 }
