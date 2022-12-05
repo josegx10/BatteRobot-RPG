@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Tienda : MonoBehaviour
 {
+    public AudioSource AudioCash;
+
+    public void playsoundsfx()
+    {
+        AudioCash.Play();
+    }
+
     // Start is called before the first frame update
     public void BtnSalirTienda()
     {
@@ -25,6 +32,5 @@ public class Tienda : MonoBehaviour
     {
         Debug.Log("Lanzallamas");
     }
-
 
 }
