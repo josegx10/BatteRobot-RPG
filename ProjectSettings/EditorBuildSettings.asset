@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ejeplo.unity
-    guid: 9aaa0a26616fe2c45bb9961a77b4e71d
-  - enabled: 1
-    path: Assets/Scenes/Escena2.unity
-    guid: 7fe882e71b30115428bf3b0f715c846f
-  - enabled: 1
     path: Assets/Scenes/inicio.unity
     guid: df34f2f8477ddf34c91cd45e8de75c97
   - enabled: 1
+    path: Assets/Scenes/ejeplo.unity
+    guid: 9aaa0a26616fe2c45bb9961a77b4e71d
+  - enabled: 1
     path: Assets/Scenes/tienda.unity
     guid: 3288e1b61dd9fb04abbe2e230e094f9d
+  - enabled: 1
+    path: Assets/Scenes/Escena2.unity
+    guid: 7fe882e71b30115428bf3b0f715c846f
   m_configObjects: {}
